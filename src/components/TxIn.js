@@ -16,7 +16,7 @@ export default class TxIn extends React.Component {
         <div class="card-body">
           <p>ID       : {txIn.txOutId} </p>
           <p>INDEX    : {txIn.txOutIndex}</p>
-          <p>SIGNATURE: {txIn.signature}}</p>
+          <p>SIGNATURE: {txIn.signature}</p>
         </div>
       </div>
     );

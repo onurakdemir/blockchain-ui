@@ -14,7 +14,8 @@ export default class TxOut extends React.Component {
       <div class="card">
         <div class="card-body">
           <h4>TX_OUT</h4>
-          <p>{txOut.address}</p>;
+          <p>ADDRESS : {txOut.address}</p>
+          <p>AMOUNT  : {txOut.amount}</p>
         </div>
       </div>
     )
