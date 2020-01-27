@@ -9,11 +9,13 @@ export default class TxOut extends React.Component {
   };
 
   render() {
-    const transaction = this.props.transaction;
+    const txOut = this.props.txOut;
     return (
-      <div>
-        <h4>TxIns</h4>
-        <p>{transaction.txOut.address}</p>;
+      <div class="card">
+        <div class="card-body">
+          <h4>TX_OUT</h4>
+          <p>{txOut.address}</p>;
+        </div>
       </div>
     )
   }

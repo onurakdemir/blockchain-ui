@@ -12,7 +12,12 @@ export default class TxIn extends React.Component {
   render() {
     const txIn = this.props.txIn;
     return (
-      <div>
+      <div class="card">
+        <div class="card-body">
+          <p>ID       : {txIn.txOutId} </p>
+          <p>INDEX    : {txIn.txOutIndex}</p>
+          <p>SIGNATURE: {txIn.signature}}</p>
+        </div>
       </div>
     );
   }

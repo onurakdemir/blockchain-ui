@@ -14,8 +14,15 @@ const TRANSACTIONS =
 
 function App() {
   return (
-    <div className="App">
-      <Transaction transactions={TRANSACTIONS} />
+    <div class="container">
+      <h1 class="p-3 mb-2 bg-primary text-white">BlockChain ReactJS Explorer</h1>
+      <h3 class="p-3 mb-2 bg-light text-dark">Your transactions.</h3>
+
+      <div class="row">
+        <div class="col-12">
+          <Transaction transactions={TRANSACTIONS} />
+        </div>
+      </div>
     </div>
   );
 }
