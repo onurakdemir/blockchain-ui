@@ -1,18 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import './TxIn';
+import React, { useState, useEffect } from 'react';
 import Transaction from './Transaction';
-
-const TRANSACTIONS =
-{
-  id: 'eberrer45354ddfeer3443df',
-  amount: 50,
-  txIn: { txOutId: '1', txOutIndex: '0', signature: 'roll' },
-  txOut: { address: '34ere34er3dddddfff', amount: 50 }
-}
+import { getTransactions } from "../logic/TransactionService";
+import axios from "axios";
 
 function App() {
+  const [transactions, setTransactions] = useState([]);
+
+  // useEffect(() => setTransactions(getTransactions()), []);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3001/blocks")
+      .then(res => {
+
+        let items = Object.values(res.data);
+        setTransactions(items);
+      });
+  }, []);
   return (
     <div class="container">
       <h1 class="p-3 mb-2 bg-primary text-white">BlockChain ReactJS Explorer</h1>
@@ -20,7 +24,18 @@ function App() {
 
       <div class="row">
         <div class="col-12">
-          <Transaction transactions={TRANSACTIONS} />
+        <ul>
+        {
+          transactions.map(a => <li>{a.index}</li>)
+        }
+       
+        
+      </ul>
+          {/* {
+            transactions.map(transaction =>
+              <Transaction transactions={transaction} />
+            )
+          } */}
         </div>
       </div>
     </div>

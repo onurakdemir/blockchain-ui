@@ -13,11 +13,12 @@ export default class Transaction extends React.Component {
                 <div class="col-6">
                     <p>Transaction : <b>{transactions.id}</b></p>
                 </div>
-                <div class="col-6">
-                    <TxIn txIn={transactions.txIn} />
-                    <TxOut txOut={transactions.txOut} />
-                </div>
+                {/* <div class="col-6">
+                    <TxIn txIn={transaction.txIn} />
+                    <TxOut txOut={transaction.txOut} />
+                </div> */}
             </div>
+
         );
     }
 }
