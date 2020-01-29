@@ -12,7 +12,6 @@ function App() {
     axios
       .get("http://localhost:3001/blocks")
       .then(res => {
-
         let items = Object.values(res.data);
         setTransactions(items);
       });
@@ -25,11 +24,7 @@ function App() {
       <div class="row">
         <div class="col-12">
         <ul>
-        {
-          transactions.map(a => <li>{a.index}</li>)
-        }
-       
-        
+        { transactions.map(a => <li>{a.data[0].txOuts[0].address}</li>)}
       </ul>
           {/* {
             transactions.map(transaction =>
